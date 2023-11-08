@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-const FavoritedJobs = () => {
+const FavoritedJobDetail = () => {
     return(
         <View>
-            <Text>FavoritedJobs Page!</Text>
+            <Text>FavoritedJobDetail!</Text>
         </View>
     );
 }
 
-export default FavoritedJobs;
+export default FavoritedJobDetail;

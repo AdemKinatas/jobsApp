@@ -1,18 +1,21 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Jobs from './pages/Jobs';
-import FavoritedJobs from './pages/FavoritedJobs';
+// import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import JobsRouter from './pages/Jobs';
+import FavoritedJobsRouter from './pages/FavoritedJobs';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
-const Stack = createNativeStackNavigator();
+// const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 
 const Router = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Jobs" component={Jobs} />
-        <Stack.Screen name="FavoritedJobs" component={FavoritedJobs} />
-      </Stack.Navigator>
+      <Drawer.Navigator>
+        <Drawer.Screen name="Jobs" component={JobsRouter} options={{ headerShown: false }} />
+        <Drawer.Screen name="Favorited Jobs" component={FavoritedJobsRouter} options={{ headerShown: false }} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }

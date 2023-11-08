@@ -1,1 +1,1 @@
-export { default } from './FavoritedJobs'
+export { default } from './FavoritedJobsRouter';
