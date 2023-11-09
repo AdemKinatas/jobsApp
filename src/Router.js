@@ -13,8 +13,22 @@ const Router = () => {
   return (
     <NavigationContainer>
       <Drawer.Navigator>
-        <Drawer.Screen name="Jobs" component={JobsRouter} options={{ headerShown: false }} />
-        <Drawer.Screen name="Favorited Jobs" component={FavoritedJobsRouter} options={{ headerShown: false }} />
+        <Drawer.Screen
+          name="Jobs"
+          component={JobsRouter}
+          options={{
+            headerShown: false,
+            drawerActiveTintColor: "#F74B4B"
+          }}
+        />
+        <Drawer.Screen
+          name="Favorited Jobs"
+          component={FavoritedJobsRouter}
+          options={{
+            headerShown: false,
+            drawerActiveTintColor: "#F74B4B"
+          }}
+        />
       </Drawer.Navigator>
     </NavigationContainer>
   );
