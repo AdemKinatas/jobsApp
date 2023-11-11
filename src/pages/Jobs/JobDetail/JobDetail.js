@@ -3,6 +3,7 @@ import { View } from 'react-native'
 import { WebView } from 'react-native-webview';
 import styles from './JobDetail.styles';
 import DetailInformationCard from '../../../components/Cards/DetailInformationCard';
+import DetailBottomCard from '../../../components/Cards/DetailBottomCard';
 
 const JobDetail = ({ route }) => {
   const { job } = route.params;
@@ -30,6 +31,7 @@ const JobDetail = ({ route }) => {
       <WebView
         source={{ html: styledHtmlContent }}
       />
+      <DetailBottomCard /> 
     </View>
   );
 }
