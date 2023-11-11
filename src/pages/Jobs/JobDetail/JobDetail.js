@@ -31,7 +31,7 @@ const JobDetail = ({ route }) => {
       <WebView
         source={{ html: styledHtmlContent }}
       />
-      <DetailBottomCard /> 
+      <DetailBottomCard job={job} /> 
     </View>
   );
 }

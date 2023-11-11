@@ -2,11 +2,13 @@ import React from 'react';
 import { View } from 'react-native';
 import styles from './DetailBottomCard.styles';
 import RedButton from '../../Buttons/RedButton';
+import { useDispatch } from 'react-redux';
 
-const DetailBottomCard = () => {
+const DetailBottomCard = ({ job }) => {
+    const disPatch = useDispatch();
 
     const handleSubmit = () => {
-
+        disPatch({ type: 'ADD_TO_FAVORITES', payload: { job: job } });
     }
 
     return (

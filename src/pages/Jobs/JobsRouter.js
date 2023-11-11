@@ -2,10 +2,15 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import JobList from './JobList';
 import JobDetail from './JobDetail';
+import { useSelector } from 'react-redux';
+import CustomHeaderTitle from '../../components/CustomHeaderTitle';
 
 const Stack = createNativeStackNavigator();
 
 const JobsRouter = () => {
+
+    const jobName = useSelector(s => s.jobName);
+
     return (
         <Stack.Navigator>
             <Stack.Screen
@@ -17,7 +22,7 @@ const JobsRouter = () => {
                     headerTintColor: "red",
                     statusBarColor: "white",
                     navigationBarColor: "transparent",
-                    headerTitleStyle : {
+                    headerTitleStyle: {
                         fontSize: 25,
                         fontWeight: "bold",
                     }
@@ -27,13 +32,13 @@ const JobsRouter = () => {
                 name="JobDetail"
                 component={JobDetail}
                 options={{
-                    title: "JobDetail",
+                    title: jobName.length > 30 ? `${jobName.substring(0, 30)}...` : jobName,
                     headerTitleAlign: "center",
                     headerTintColor: "red",
                     statusBarColor: "white",
                     navigationBarColor: "transparent",
-                    headerTitleStyle : {
-                        fontSize: 25,
+                    headerTitleStyle: {
+                        fontSize: 20,
                         fontWeight: "bold",
                     }
                 }}
